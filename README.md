@@ -10,3 +10,20 @@ The shell can be limited to handling basic commands that do not involve piping a
 ## Assignment 2 Shared Memory 
 
 Write two simple C programs that communicate with each other via shared memory. The first program **receiver.c**  runs in an infinite loop receiving alpha numeric strings as input from the user, one line at a time. After reading one line from the standard input, this program sends this information to the other program only if the line contains the secret **code "C00L"**. The sharing of data between the two processes should take place via shared memory. The second program **processor.c** creates an output file secrets.out and waits for user input to be sent by the receiver program. As soon as one line is received from the receiver, it counts the number of digits in that line and dumps the digit count along with the original line in the **secrets.out** file. This program also runs in an infinite loop.
+
+## Assignment 3 (Sockets and Signals)
+
+Sockets and Signals- Programming assignment
+
+Modify the program described in Assignment 2 in such a way that the two programs can be run on different machines. The program receiver.c will now be the client program that will interact with the user. Call it client.c. The processor.c will be the backend program – call it server.c. The client and server programs have the same functionality as described in Assignment 2 except that they should use sockets as a communication mechanism that will allow the client and the server to be run on different machines. 
+
+When the user presses Ctrl-C on the server.c terminal, the server program should display a summary, which should show the number of lines received so far and the total digit count across all input seen by the server.
+
+Please submit a zip file labeled as Assignment3_Yourname.zip. It should include a PDF file with explanation of what your code does (this is optional if your code is self explanatory with comments) and two C source files – client.c and server.c.
+
+
+## Assignment 4 Remote Procedure Call - Distributed System
+
+Modify the program described in Assignment 3 in such a way that the two programs can be run on different machines using Remote Procedure Calls (RPC). Remote procedure calls allow programs to make procedure calls into remote programs running on a different machine across the network and are therefore fundamental in building a distributed system. The  receiver.c and the processor.c have the same functionality as described in Assignment 3 except that they should use remote procedure calls to communicate and achieve the same functionality. 
+
+Please submit a zip file labeled as Assignment4_Yourname.zip. It should include a PDF file with explanation of what your code does (this is optional if your code is self explanatory with comments) and the relevant source files and a Makefile to compile the different components.
